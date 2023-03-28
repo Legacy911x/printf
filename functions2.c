@@ -16,7 +16,7 @@
 int print_pointer(va_list types, char buffer[], int flags,
 		int width, int precision, int size)
 {
-	char extra_c = o, padd = ' ';
+	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1;
 	/* length = 2, for '0x' */
 
@@ -37,7 +37,7 @@ int print_pointer(va_list types, char buffer[], int flags,
 
 	while (num_addrs > 0)
 	{
-		buffer[ind--] = map_to[num_addrs % 16;
+		buffer[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
 		length++;
 	}
@@ -86,8 +86,8 @@ int print_non_printable(va_list types, char buffer[],
 	{
 		if (is_printable(str[i]))
 			buffer[i + offset] = str[i];
-		els
-			offset += append_hexa_code(str[i], buffer, i + offset);
+		else
+			offset =+ append_hexa_code(str[i], buffer, i + offset);
 
 		i++;
 	}
@@ -185,7 +185,7 @@ int print_rot13string(va_list types, char buffer[],
 				break;
 			}
 		}
-		if (@in[j])
+		if (!in[j])
 		{
 			x = str[i];
 			write(1, &x, 1);

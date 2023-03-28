@@ -34,7 +34,7 @@ if (fmt_types[i].fmt == '\0')
 		return (-1);
 	unknow_len += write(1, "%%", 1);
 	if (fmt[*ind - 1] == ' ')
-		unkow_len += write(1, " ", 1);
+		unknow_len += write(1, " ", 1);
 	else if (width)
 	{
 		--(*ind);
@@ -44,8 +44,8 @@ if (fmt_types[i].fmt == '\0')
 			--(*ind);
 		return (1);
 	}
-	unkow_len += write(1, &fmt[*ind], 1);
-	return (unkow_len);
+	unknow_len += write(1, &fmt[*ind], 1);
+	return (unknow_len);
 }
 return (printed_chars);
 }
